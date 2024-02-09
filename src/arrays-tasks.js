@@ -38,8 +38,10 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  const maxArr = arr1.length >= arr2.length ? arr1 : arr2;
+  const minArr = arr1.length >= arr2.length ? arr2 : arr1;
+  return maxArr.map((el, index) => (minArr[index] ? el + minArr[index] : el));
 }
 
 /**
@@ -150,8 +152,8 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  return arr.some((val, index) => val === index);
 }
 
 /**
